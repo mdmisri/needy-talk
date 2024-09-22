@@ -60,15 +60,14 @@ const App = () => {
     return (
         <div>
             <Routes>
-                <Route path="/login" element={<Login setUser={setUser} setUsername={setUsername} setIsAdmin={setIsAdmin} />} />
+                <Route path="/login" element={<Login setUser={setUser} setUsername={setUsername} setIsAdmin={setIsAdmin} setAdminUsername={setAdminUsername} />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/home" element={!isAdmin ? <ChatStart username={username} onAdminSelect={handleAdminSelection} /> : <AdminChatBox adminUsername={username} handleAdminSelection={handleAdminSelection} />} />
                 <Route path="/admin-chat" element={<AdminChatBox adminUsername={username} handleAdminSelection={handleAdminSelection} />} />
-                <Route path="/chat/:receiverUsername" element={<ChatBox senderUsername={username} />} />
+                <Route path="/chat/:receiverUsername" element={user ? <ChatBox senderUsername={username} handleLogout={handleLogout} /> : <Navigate to="/login" />} />
                 {/* Default route for the root path */}
                 <Route path="/" element={<Navigate to="/login" replace />} />
             </Routes>
-            {user && <button onClick={handleLogout}>Logout</button>}
         </div>
     );
 };

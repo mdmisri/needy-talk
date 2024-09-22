@@ -5,7 +5,7 @@ import Message from './Message';
 import socket from './socket';
 import './styles/ChatBox.css';
 
-const ChatBox = ({ senderUsername }) => {
+const ChatBox = ({ senderUsername , handleLogout}) => {
     const { receiverUsername } = useParams();
     const [newMessage, setNewMessage] = useState('');
     const { messages, sendMessage, handleTyping, isTyping, setConversationId } = useConversation(senderUsername, receiverUsername);
@@ -13,7 +13,6 @@ const ChatBox = ({ senderUsername }) => {
 
     useEffect(() => {
         if (senderUsername) {
-            console.log(`Sender Username: ${senderUsername}`);
             socket.emit('setUsername', senderUsername);
             socket.emit('userOnline', senderUsername);
         }
@@ -26,12 +25,6 @@ const ChatBox = ({ senderUsername }) => {
     }, [senderUsername]);
 
     useEffect(() => {
-        if (receiverUsername) {
-            console.log(`Receiver Username: ${receiverUsername}`);
-        }
-    }, [receiverUsername]);
-
-    useEffect(() => {
         if (messages) {
             const chatContainer = document.querySelector('.messages');
             if (chatContainer) {
@@ -39,10 +32,6 @@ const ChatBox = ({ senderUsername }) => {
             }
         }
     }, [messages]);
-
-    useEffect(() => {
-        console.log(`isTyping: ${isTyping}`);
-    }, [isTyping]);
 
     const handleSendMessage = () => {
         if (newMessage.trim() && senderUsername && receiverUsername) {
@@ -57,15 +46,16 @@ const ChatBox = ({ senderUsername }) => {
         }
     };
 
-    const handleLogout = () => {
+    const Logout = () => {
         socket.emit('userOffline', senderUsername);
+        handleLogout();
         navigate('/login'); // Assuming the login page is at /login
     };
 
     return (
         <>
             <div className="notification-text">
-                Hey,You will be responded to within 12 hours!😁
+                Hey, you will be responded to within 12 hours!😁
             </div>
             <div className="chatbox">
                 <div className="messages">
@@ -88,7 +78,7 @@ const ChatBox = ({ senderUsername }) => {
                     <button className='send-button' onClick={handleSendMessage}>Send</button>
                 </div>
             </div>
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
+            <button className="logout-button" onClick={Logout}>Logout</button>
         </>
     );
 };
