@@ -1,0 +1,20 @@
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding-left: 45px; /* Make room for the icon */
+    position: relative;
+}
+
+.login-container input[type="text"]::before,
+.login-container input[type="password"]::before {
+    content: '\f007'; /* User icon for username */
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff;
+}
+
+.login-container input[type="password"]::before {
+    content: '\f023'; /* Lock icon for password */
+}

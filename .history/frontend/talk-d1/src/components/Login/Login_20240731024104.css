@@ -1,0 +1,87 @@
+/* Container for the login form */
+.login-container {
+    max-width: 400px; /* Adjusted width */
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+/* Heading for the login form */
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Error message styling */
+.login-container .error {
+    color: #ff3e3e;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Input fields for username and password */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #f8f8f8;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+/* Focus state for input fields */
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+    background: #ffffff;
+    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.1);
+}
+
+/* Button styling */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Hover state for button */
+.login-container button:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+}
+
+/* Active state for button */
+.login-container button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+}

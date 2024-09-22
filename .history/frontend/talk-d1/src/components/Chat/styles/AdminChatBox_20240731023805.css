@@ -1,0 +1,251 @@
+/* Container for the login form */
+.login-container {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading for the login form */
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Error message styling */
+.login-container .error {
+    color: #ff3e3e;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Input fields for username and password */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #f8f8f8;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Focus state for input fields */
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+    background: #ffffff;
+    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.1);
+}
+
+/* Button styling */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Hover state for button */
+.login-container button:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+}
+
+/* Active state for button */
+.login-container button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+}
+
+/* AdminChatBox.css */
+.admin-chat-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: #f0f0f0; /* Light background for contrast */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.user-tabs {
+    width: 250px; /* Fixed width for the tabs */
+    background-color: #e0e0e0;
+    border-right: 1px solid #ccc;
+    overflow-y: auto; /* Allow vertical scrolling */
+    padding: 10px;
+    flex-shrink: 0; /* Prevents shrinking */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.user-tab {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+    background-color: #f5f5f5;
+    color: #333; /* Dark text for contrast */
+}
+
+.user-tab:hover {
+    background-color: #d0d0d0;
+}
+
+.user-tab.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.chat-box {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #fff;
+    overflow: hidden; /* Prevent overflow */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.messages {
+    flex: 1; /* Take up remaining space in chat box */
+    overflow-y: auto; /* Enable vertical scrolling for messages */
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Align messages to the bottom */
+}
+
+.typing-indicator {
+    font-style: italic;
+    color: #666;
+    margin: 5px 0;
+}
+
+.input-area {
+    display: flex; /* Flexbox for input and button */
+    align-items: center; /* Center items vertically */
+    padding: 10px; /* Add padding to input area */
+    background-color: #fff; /* Ensure background color is consistent */
+    border-top: 1px solid #ccc; /* Add a border on top */
+    flex-shrink: 0; /* Prevent input area from shrinking */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+input[type="text"] {
+    flex: 1; /* Allow input to take available space */
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darken button on hover */
+}
+
+/* Styles for the "Select a user to start chatting" message */
+.chat-box > div {
+    display: flex;
+    justify-content: center; /* Centered message */
+    align-items: center;
+    height: 100%; /* Full height */
+    font-size: 18px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-chat-container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+    
+    .user-tabs {
+        width: 100%; /* Full width on mobile */
+        height: 30vh; /* 30% height for user tabs */
+        border-right: none;
+        border-bottom: 1px solid #ccc; /* Border below tabs */
+    }
+
+    .chat-box {
+        height: 70vh; /* 70% height for chat box */
+    }
+
+    .input-area {
+        flex-direction: column; /* Stack input and button */
+        padding: 0; /* Remove padding */
+    }
+
+    input[type="text"] {
+        width: 100%; /* Full width on mobile */
+        margin-right: 0; /* No margin right */
+        margin-bottom: 10px; /* Margin below input */
+        height: 50px;
+    }
+
+    button {
+        width: 100%; /* Full width button */
+    }
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.message.admin {
+    background-color: #e6f2ff; /* Light blue for admin messages */
+    align-self: flex-end; /* Align admin messages to the right */
+}
+
+.message.user {
+    background-color: #f0f0f0; /* Light gray for user messages */
+    align-self: flex-start; /* Align user messages to the left */
+}

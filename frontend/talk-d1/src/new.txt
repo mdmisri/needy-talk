@@ -1,0 +1,22 @@
+{
+    "username": "sallu",
+    "password": "1",
+    "isAdmin": false,
+    "gender": "male"
+}
+
+
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMzY2OTY0OWQ5NDRkYjNjNDBmMTliIiwiaXNBZG1pbiI6ZmFsc2V9LCJpYXQiOjE3MjE5ODQ2OTUsImV4cCI6MTcyMTk4ODI5NX0.SB-BNsjZCq-PPQGVAyT5GHIidi-hbObQOni3mwTPDdM",
+  "isAdmin": false,
+  "username": "sallu"
+
+
+  {
+    "userId": "66a3669649d944db3c40f19b",   
+    "adminUsername": "srk"
+}
+{
+    "senderUsername": "sallu",
+    "receiverUsername": "srk",
+    "message": "mememe!"
+}
