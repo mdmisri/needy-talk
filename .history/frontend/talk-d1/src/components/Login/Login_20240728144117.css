@@ -1,0 +1,54 @@
+
+
+.login-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-container input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    background: #f0f0f0;
+    box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.login-container input:focus {
+    outline: none;
+    box-shadow: inset 5px 5px 10px #c1c1c1, inset -5px -5px 10px #ffffff;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+}
+
+.login-container button:hover {
+    background: linear-gradient(145deg, #0056b3, #004494);
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 15px #d9d9d9, -7px -7px 15px #ffffff;
+}
+
+.login-container button:active {
+    transform: translateY(0);
+    box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
+}

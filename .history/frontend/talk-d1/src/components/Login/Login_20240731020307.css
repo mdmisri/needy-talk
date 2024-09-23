@@ -1,0 +1,131 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000000; /* Set the background color to black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.login-container {
+    width: 340px;
+    padding: 40px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.login-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: calc(100% - 40px); /* Adjust width to ensure it fits inside the container */
+    margin-bottom: 20px;
+    padding: 10px 15px; /* Adjust padding for better spacing */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 8px; /* Less rounded for a more modern look */
+    background: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle outer shadow */
+    font-size: 14px; /* Smaller font size */
+    transition: all 0.3s ease;
+    outline: none; /* Remove default outline */
+    box-sizing: border-box;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: #007BFF; /* Highlight border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add glow effect on focus */
+    background: #fff; /* Ensure background is clear on focus */
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    width: 100%;
+    padding-right: 40px; /* Make room for the toggle icon */
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.password-toggle-icon:hover {
+    color: #007BFF;
+}
+
+.password-requirement {
+    position: absolute;
+    bottom: -25px; /* Adjust this value if needed */
+    left: 0;
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+    color: #ff0000;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.not-a-user {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.register-link {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-container button:hover {
+    background: linear-gradient(145deg, #0056b3, #004494);
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 15px #d9d9d9, -7px -7px 15px #ffffff;
+}
+
+.login-container button:active {
+    transform: translateY(0);
+    box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
+}

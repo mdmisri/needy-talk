@@ -1,0 +1,27 @@
+.message {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20px;
+    max-width: 60%;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.sent {
+    background-color: #d1ffd6;
+    align-self: flex-end;
+}
+
+.received {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+}
+
+.read-receipt {
+    font-size: 12px;
+    color: #6f00ff;
+    position: absolute;
+    bottom: -15px; /* Adjust positioning as needed */
+    right: 10px; /* Adjust positioning as needed */
+}

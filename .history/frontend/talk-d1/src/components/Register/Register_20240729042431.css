@@ -1,0 +1,39 @@
+html, body {
+    background-color: #000; /* Set the background color to black */
+    color: #fff; /* Set the text color to white for better contrast */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Ensure the body takes the full height */
+}
+
+.form-container {
+    width: 340px;
+    padding: 40px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    border-radius: 15px;
+    margin: 100px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+    width: calc(100% - 40px); /* Adjust width to account for padding */
+    margin-bottom: 20px;
+    padding: 12px 20px; /* Adjust padding for better spacing */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 8px; /* Less rounded for a more modern look */
+    background: #f9f9f9;
+    box-shadow
+}

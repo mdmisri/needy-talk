@@ -1,0 +1,35 @@
+.register-container {
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+}
+
+.register-container input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-container button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.register-container button:hover {
+    background: #0056b3;
+}

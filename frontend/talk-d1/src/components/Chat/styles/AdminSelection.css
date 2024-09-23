@@ -1,0 +1,44 @@
+.admin-selection-container {
+    display: flex;
+    flex-direction: column; /* Stack the heading above the cards */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center; /* Center the heading text */
+}
+
+.admin-selection-container h2 {
+    margin-bottom: 20px; /* Add some space below the heading */
+    color: white; /* Ensure the heading text is white */
+}
+
+.cards-wrapper {
+    display: flex; /* Display the cards in a row */
+    justify-content: center; /* Center the cards horizontally */
+}
+
+.card {
+    background-color: white; /* Set the background color of the card to white */
+    color: black; /* Set the text color inside the card to black */
+    margin: 10px 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    margin: 0;
+    color: black; /* Ensure the card header text is black */
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}

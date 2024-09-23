@@ -1,0 +1,48 @@
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding-left: 45px; /* Make room for the icon */
+    position: relative;
+}
+
+.login-container input[type="text"]::before,
+.login-container input[type="password"]::before {
+    content: '\f007'; /* User icon for username */
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff;
+}
+
+.login-container input[type="password"]::before {
+    content: '\f023'; /* Lock icon for password */
+}
+
+
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+}
+
+.login-container button:hover {
+    background: linear-gradient(145deg, #0056b3, #004494);
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 15px #d9d9d9, -7px -7px 15px #ffffff;
+}
+
+.login-container button:active {
+    transform: translateY(0);
+    box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
+}
