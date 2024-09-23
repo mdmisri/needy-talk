@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import useConversation from '../../hooks/useConversation';
 import Message from './Message';
@@ -9,21 +9,9 @@ const AdminChatBox = ({ adminUsername }) => {
     const [users, setUsers] = useState([]);
     const [currentUser, setCurrentUser] = useState(null);
     const [newMessage, setNewMessage] = useState('');
+
     const { messages, sendMessage, handleTyping, isTyping, setConversationId } = useConversation(adminUsername, currentUser?.username);
     
-    // Ref for the messages container
-    const messagesEndRef = useRef(null);
-
-    // Scroll to the bottom function
-    const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    // Auto scroll when messages update
-    useEffect(() => {
-        scrollToBottom();
-    }, [messages]);
-
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -104,20 +92,17 @@ const AdminChatBox = ({ adminUsername }) => {
                     </div>
                 ))}
             </div>
-            <div className="admin-chat-box">
+            <div className="chat-box">
                 {currentUser ? (
                     <>
-                        <div className="admin-messages-container">
+                        <div className="messages">
                             {messages.map((msg, index) => (
                                 <Message key={index} message={msg} currentUser={adminUsername} />
                             ))}
                             {isTyping && <div className="typing-indicator">User is typing...</div>}
-                            {/* Auto-scroll target */}
-                            <div ref={messagesEndRef} />
                         </div>
                         <input
                             type="text"
-                            className="admin-input-box"
                             value={newMessage}
                             onChange={(e) => {
                                 setNewMessage(e.target.value);

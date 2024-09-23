@@ -26,10 +26,10 @@ const Login = ({ setUser, setUsername, setIsAdmin, setAdminUsername }) => {
             setIsAdmin(userData.isAdmin);
             
             if (userData.isAdmin) {
-                setAdminUsername(username);
+                setAdminUsername(username); // Set the admin username
             }
 
-            navigate('/AdminSelection');
+            navigate('/home');
         } catch (err) {
             setError('Invalid credentials');
         }
@@ -40,41 +40,36 @@ const Login = ({ setUser, setUsername, setIsAdmin, setAdminUsername }) => {
     };
 
     return (
-        <div className="login-page">
-            <div className="login-container">
-                <h2>Login</h2>
-                {error && <p className="error">{error}</p>}
-                <form onSubmit={handleLogin}>
-                    <div className="input-group">
-                        <input
-                            type="text"
-                            value={username}
-                            onChange={(e) => setUsernameInput(e.target.value)}
-                            placeholder="Username"
-                            required
-                        />
-                    </div>
-                    <div className="password-container">
-                        <input
-                            type={showPassword ? "text" : "password"}
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Password"
-                            required
-                        />
-                        <FontAwesomeIcon
-                            icon={showPassword ? faEyeSlash : faEye}
-                            onClick={togglePasswordVisibility}
-                            className="password-toggle-icon"
-                        />
-                    
-                    {/* <p className="password-requirement">Password must be at least 6 characters</p> */}
-                    </div>
-                    <button type="submit" className="login-button">Login</button>
-                </form>
-                <div className="not-a-user">
-                    Not a user? <Link to="/register" className="register-link">Register</Link>
+        <div className="login-container">
+            <h2>Login</h2>
+            {error && <p className="error">{error}</p>}
+            <form onSubmit={handleLogin}>
+                <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsernameInput(e.target.value)}
+                    placeholder="Username"
+                    required
+                />
+                <div className="password-container">
+                    <input
+                        type={showPassword ? "text" : "password"}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Password"
+                        required
+                    />
+                    <FontAwesomeIcon
+                        icon={showPassword ? faEyeSlash : faEye}
+                        onClick={togglePasswordVisibility}
+                        className="password-toggle-icon"
+                    />
+                    <p className="password-requirement">Password must be at least 6 characters</p>
                 </div>
+                <button type="submit">Login</button>
+            </form>
+            <div className="not-a-user">
+                Not a user? <Link to="/register" className="register-link">Register</Link>
             </div>
         </div>
     );

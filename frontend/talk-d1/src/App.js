@@ -7,8 +7,7 @@ import AdminChatBox from './components/Chat/AdminChatBox';
 import ChatStart from './components/Chat/ChatStart';
 import AdminSelection from './components/Chat/AdminSelection';
 import socket from './components/Chat/socket';
-import HomePage from './components/HomePage'; // Make sure this import is correct
-import AboutUs from './components/AboutUs';
+
 const App = () => {
     const [user, setUser] = useState(null);
     const [username, setUsername] = useState('');
@@ -38,7 +37,7 @@ const App = () => {
             } else if (redirectToChat) {
                 navigate(`/chat/${adminUsername}`);
             } else {
-                navigate('/AdminSelection');
+                navigate('/home');
             }
         }
     }, [user, isAdmin, redirectToChat, adminUsername, navigate]);
@@ -61,13 +60,13 @@ const App = () => {
     return (
         <div>
             <Routes>
-                <Route path="/" element={<HomePage />} /> {/* HomePage as default */}
                 <Route path="/login" element={<Login setUser={setUser} setUsername={setUsername} setIsAdmin={setIsAdmin} setAdminUsername={setAdminUsername} />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/AdminSelection" element={!isAdmin ? <ChatStart username={username} onAdminSelect={handleAdminSelection} /> : <AdminChatBox adminUsername={username} handleAdminSelection={handleAdminSelection} />} />
+                <Route path="/home" element={!isAdmin ? <ChatStart username={username} onAdminSelect={handleAdminSelection} /> : <AdminChatBox adminUsername={username} handleAdminSelection={handleAdminSelection} />} />
                 <Route path="/admin-chat" element={<AdminChatBox adminUsername={username} handleAdminSelection={handleAdminSelection} />} />
                 <Route path="/chat/:receiverUsername" element={user ? <ChatBox senderUsername={username} handleLogout={handleLogout} /> : <Navigate to="/login" />} />
-                <Route path="/about-us" element={<AboutUs />} />
+                {/* Default route for the root path */}
+                <Route path="/" element={<Navigate to="/login" replace />} />
             </Routes>
         </div>
     );

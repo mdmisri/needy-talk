@@ -1,25 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useConversation from '../../hooks/useConversation';
 import Message from './Message';
 import socket from './socket';
 import './styles/ChatBox.css';
 
-const ChatBox = ({ senderUsername, handleLogout }) => {
+const ChatBox = ({ senderUsername , handleLogout}) => {
     const { receiverUsername } = useParams();
     const [newMessage, setNewMessage] = useState('');
-    const { messages, sendMessage, handleTyping, isTyping } = useConversation(senderUsername, receiverUsername);
+    const { messages, sendMessage, handleTyping, isTyping, setConversationId } = useConversation(senderUsername, receiverUsername);
     const navigate = useNavigate();
-    const messagesEndRef = useRef(null);
-
-    const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    // Auto scroll when messages update
-    useEffect(() => {
-        scrollToBottom();
-    }, [messages]);
 
     useEffect(() => {
         if (senderUsername) {
@@ -33,6 +23,15 @@ const ChatBox = ({ senderUsername, handleLogout }) => {
             }
         };
     }, [senderUsername]);
+
+    useEffect(() => {
+        if (messages) {
+            const chatContainer = document.querySelector('.messages');
+            if (chatContainer) {
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+        }
+    }, [messages]);
 
     const handleSendMessage = () => {
         if (newMessage.trim() && senderUsername && receiverUsername) {
@@ -54,17 +53,16 @@ const ChatBox = ({ senderUsername, handleLogout }) => {
     };
 
     return (
-        <div className='user-chat-page'>                                                                                                                                                                                    
+        <>
             <div className="notification-text">
                 Hey, you will be responded to within 12 hours!😁
             </div>
-            <div className="chat-box">
-                <div className="user-messages">
+            <div className="chatbox">
+                <div className="messages">
                     {messages.map((msg, index) => (
                         <Message key={index} message={msg} currentUser={senderUsername} />
                     ))}
                     {isTyping && <div className="typing-indicator">{receiverUsername} is typing...</div>}
-                    <div ref={messagesEndRef} />
                 </div>
                 <div className="input-area">
                     <input
@@ -81,7 +79,7 @@ const ChatBox = ({ senderUsername, handleLogout }) => {
                 </div>
             </div>
             <button className="logout-button" onClick={Logout}>Logout</button>
-        </div>
+        </>
     );
 };
 

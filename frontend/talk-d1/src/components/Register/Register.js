@@ -33,7 +33,6 @@ const Register = () => {
     };
 
     return (
-        <div className="form-page">
         <div className="form-container">
             <h2>Register</h2>
             {message && <p>{message}</p>}
@@ -73,7 +72,6 @@ const Register = () => {
             <div className="already-user">
                 Already a user? <Link to="/login">Login</Link>
             </div>
-        </div>
         </div>
     );
 };

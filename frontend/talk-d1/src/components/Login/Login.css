@@ -2,19 +2,15 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
-}
-
-.login-page {
+    background-color: #000000; /* Set the background color to black */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #000000;
+    font-family: 'Arial', sans-serif;
 }
 
 .login-container {
-    width: 400px;
+    width: 400px; /* Increased width */
     padding: 40px;
     background: linear-gradient(145deg, #ffffff, #f0f0f0);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
@@ -44,27 +40,26 @@ body, html {
     font-size: 16px;
     transition: all 0.3s ease;
     outline: none;
-    box-sizing: border-box;
+     box-sizing: border-box;
 }
 
 .login-container input[type="text"]:focus,
 .login-container input[type="password"]:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    background: #fff;
+    border-color: #007BFF; /* Highlight border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add glow effect on focus */
+    background: #fff; /* Ensure background is clear on focus */
 }
 
 .password-container {
     position: relative;
     width: 100%;
-    margin-bottom: 0; /* Remove margin-bottom to eliminate gap */
+    margin-bottom: 20px;
 }
-
 
 .password-container input[type="password"],
 .password-container input[type="text"] {
     width: 100%;
-    padding-right: 40px;
+    padding-right: 40px; /* Make room for the toggle icon */
 }
 
 .password-toggle-icon {
@@ -83,13 +78,13 @@ body, html {
 
 .password-requirement {
     position: absolute;
-    bottom: -20px;
+    bottom: -25px; /* Adjust this value if needed */
     left: 0;
     width: 100%;
     text-align: left;
     font-size: 12px;
     color: #ff0000;
-    margin-top: 2px;
+    margin-top: 5px;
     box-sizing: border-box;
 }
 
@@ -122,7 +117,6 @@ body, html {
     letter-spacing: 1px;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 10px; /* Optional: Set a smaller margin if needed */
 }
 
 .login-container button:hover {
@@ -134,10 +128,4 @@ body, html {
 .login-container button:active {
     transform: translateY(0);
     box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
-}
-
-.error {
-    color: #ff6b6b;
-    text-align: center;
-    margin-bottom: 1rem;
 }

@@ -2,15 +2,11 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
-}
-
-.form-page {
+    background-color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #000000;
+    font-family: 'Arial', sans-serif;
 }
 
 .form-container {
